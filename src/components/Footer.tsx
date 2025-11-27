@@ -10,6 +10,7 @@ import {
   ChevronDown,
   Heart,
   Smartphone,
+  MessageCircle,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Separator } from "@/components/ui/separator";
@@ -105,7 +106,7 @@ const Footer = () => {
           {/* About Section */}
 
           <FooterSection
-            title="Let's Stream V2.0"
+            title="ZANEFLIX"
             id="about"
             isMobile={isMobile}
             expandedSection={expandedSection}
@@ -113,7 +114,7 @@ const Footer = () => {
           >
             <p className="mb-4 text-sm text-white/70">
               Discover and enjoy the best movies and TV shows all in one place.
-              Let's Stream V2.0 helps you find, explore, and watch your favorite
+              ZANEFLIX helps you find, explore, and watch your favorite
               content online.
             </p>
 
@@ -253,43 +254,23 @@ const Footer = () => {
           >
             <div className="flex flex-wrap gap-2">
               <a
-                href="https://github.com/chintan992"
-                className="hover:bg-accent/20 rounded-full bg-white/5 p-2 transition-all duration-200 hover:scale-105"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5 text-white" />
-              </a>
-
-              <a
-                href="https://x.com/sid992r"
-                className="hover:bg-accent/20 rounded-full bg-white/5 p-2 transition-all duration-200 hover:scale-105"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5 text-white" />
-              </a>
-
-              <a
-                href="https://facebook.com/chintan992"
-                className="hover:bg-accent/20 rounded-full bg-white/5 p-2 transition-all duration-200 hover:scale-105"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5 text-white" />
-              </a>
-
-              <a
-                href="https://instagram.com/chintan992"
+                href="https://instagram.com/zane_ox0"
                 className="hover:bg-accent/20 rounded-full bg-white/5 p-2 transition-all duration-200 hover:scale-105"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Instagram className="h-5 w-5 text-white" />
               </a>
 
               <a
-                href="mailto:chintanr21@gmail.com"
+                href="https://discord.com/users/zane_0xo"
                 className="hover:bg-accent/20 rounded-full bg-white/5 p-2 transition-all duration-200 hover:scale-105"
-                aria-label="Email"
+                aria-label="Discord"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Mail className="h-5 w-5 text-white" />
+                <MessageCircle className="h-5 w-5 text-white" />
               </a>
             </div>
 
@@ -311,11 +292,11 @@ const Footer = () => {
         <div className="mt-8 border-t border-white/10 pt-4 text-center">
           <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
             <p className="flex items-center text-xs text-white/50">
-              © {currentYear} Let's Stream V2.0. All rights reserved.
+              © {currentYear} ZANEFLIX. All rights reserved.
               <span className="mx-1 inline-flex items-center">
                 Built with{" "}
                 <Heart className="mx-1 h-3 w-3 text-accent" fill="#E63462" /> by
-                the community
+                Zane
               </span>
             </p>
 
