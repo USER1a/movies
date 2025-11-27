@@ -14,12 +14,12 @@ const Logo: React.FC = () => {
       onClick={() => navigate("/")}
       className="cursor-pointer font-mono text-5xl font-bold"
     >
-      <span className={styles.flickerL + " text-white"}>L</span>
+      <span className={styles.flickerL + " text-white"}>ZANE</span>
       <span
         className={styles.flickerS + " text-white"}
         style={{ marginLeft: "-0.25em" }}
       >
-        S
+        flix
       </span>
     </div>
   );
