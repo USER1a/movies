@@ -20,17 +20,21 @@ const PROVIDERS = {
 const getProviderContent = async (
   providerId: number,
   page: number = 1,
-  region: string = "US"
+  region?: string
 ): Promise<Media[]> => {
   try {
-    const response = await tmdb.get("/discover/movie", {
-      params: {
-        with_watch_providers: providerId,
-        watch_region: region,
-        sort_by: "popularity.desc",
-        page,
-      },
-    });
+    const params: Record<string, any> = {
+      with_watch_providers: providerId,
+      sort_by: "popularity.desc",
+      page,
+    };
+    
+    // Only add watch_region if specified
+    if (region) {
+      params.watch_region = region;
+    }
+    
+    const response = await tmdb.get("/discover/movie", { params });
     return response.data.results.map((item: TMDBMovieResult) =>
       formatMediaResult({ ...item, media_type: "movie" })
     );
@@ -62,7 +66,7 @@ export const getDisneyContent = (page: number = 1) =>
 
 // Hotstar (provider id: 122)
 export const getHotstarContent = (page: number = 1) =>
-  getProviderContent(PROVIDERS.HOTSTAR, page, "IN");
+  getProviderContent(PROVIDERS.HOTSTAR, page);
 
 // Apple TV+ (provider id: 350)
 export const getAppleTVContent = (page: number = 1) =>
@@ -70,8 +74,8 @@ export const getAppleTVContent = (page: number = 1) =>
 
 // JioCinema (provider id: 970)
 export const getJioCinemaContent = (page: number = 1) =>
-  getProviderContent(PROVIDERS.JIO_CINEMA, page, "IN");
+  getProviderContent(PROVIDERS.JIO_CINEMA, page);
 
 // Sony Liv (provider id: 237)
 export const getSonyLivContent = (page: number = 1) =>
-  getProviderContent(PROVIDERS.SONY_LIV, page, "IN");
+  getProviderContent(PROVIDERS.SONY_LIV, page);
