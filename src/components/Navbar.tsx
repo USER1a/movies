@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { triggerHapticFeedback } from "@/utils/haptic-feedback";
 import PWAInstallPrompt from "./PWAInstallPrompt";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -82,12 +82,25 @@ const Navbar = () => {
             <NavLinks />
           </div>
 
-          {/* Right side: Search, Profile/Auth, Menu button */}
+          {/* Right side: Search, Discord, Profile/Auth, Menu button */}
           <div className="flex items-center gap-3">
             {/* Desktop search bar - hidden on mobile */}
             <div className="hidden md:block">
               <SearchBar />
             </div>
+
+            {/* Discord Link - visible on desktop */}
+            <a
+              href="https://discord.gg/rEh9KrG2DV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-2 rounded-full bg-[#5865F2] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#4752C4] hover:scale-105 md:flex"
+              aria-label="Join Discord"
+              onClick={() => triggerHapticFeedback(15)}
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span>Discord</span>
+            </a>
 
             {/* Mobile search - Only visible on mobile */}
             {isMobile && !isSearchExpanded && (
@@ -170,3 +183,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
